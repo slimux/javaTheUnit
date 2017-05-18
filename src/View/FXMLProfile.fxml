@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ProfileController">
+   <children>
+      <GridPane prefHeight="402.0" prefWidth="770.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="198.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="349.0" minWidth="10.0" prefWidth="316.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="135.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="60.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="239.0" minHeight="10.0" prefHeight="101.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="201.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <JFXTextField fx:id="firstName" maxWidth="212.0" minWidth="212.0" prefHeight="31.0" prefWidth="212.0" promptText="First Name" GridPane.columnIndex="1" />
+            <JFXTextField fx:id="email" maxWidth="217.0" minWidth="217.0" prefHeight="31.0" prefWidth="217.0" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <JFXButton fx:id="upload" buttonType="RAISED" onAction="#addPhoto" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: grey;" text="upload" GridPane.rowIndex="1" />
+            <JFXTextField fx:id="lastName" maxWidth="215.0" minWidth="215.0" prefHeight="31.0" prefWidth="215.0" promptText="Last Name" GridPane.columnIndex="2" />
+            <ImageView fx:id="image" fitHeight="110.0" fitWidth="152.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@personne.jpg" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="50.0" top="30.0" />
+               </GridPane.margin>
+            </ImageView>
+            <TextArea fx:id="description" prefHeight="97.0" prefWidth="492.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="70.0" right="30.0" />
+               </GridPane.margin>
+            </TextArea>
+            <JFXDatePicker fx:id="birthday" prefHeight="31.0" prefWidth="218.0" promptText="Date De Naissance" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <JFXTextField fx:id="address" maxWidth="224.0" minWidth="185.0" prefHeight="31.0" prefWidth="189.0" promptText="Adresse" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <JFXTextField fx:id="pays" maxWidth="217.0" minWidth="217.0" prefHeight="31.0" prefWidth="217.0" promptText="Pays" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="14.0" layoutY="406.0" prefHeight="30.0" prefWidth="756.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <JFXButton fx:id="cancel" onAction="#modifierProfile" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #9C1A1A;" text="cancel" textFill="WHITE" />
+            <JFXButton fx:id="update" onAction="#modifierProfile" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #9C1A1A;" text="Mettre à jour" textFill="WHITE" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

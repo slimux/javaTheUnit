@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="acCustomerMainContent" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../../../style/MainStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.application.store.ViewGamesController">
+   <children>
+      <BorderPane prefHeight="800.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TableView fx:id="tblGames" onMouseClicked="#tblCustomerOnClick" onMousePressed="#handle" prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: none;" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="tblClmNom" prefWidth="160.0" text="Nom" />
+                  <TableColumn fx:id="tblClmDescription" prefWidth="233.0" text="Description" />
+                  <TableColumn fx:id="tblClmPrix" minWidth="0.0" prefWidth="376.0" text="Prix" />
+                  <TableColumn fx:id="tblClmCategorie" prefWidth="522.0" text="Categorie" />
+              </columns>
+            </TableView>
+         </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="64.0" prefWidth="1136.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="tfSearch" onKeyReleased="#tfSearchOnKeyReleased" prefHeight="25.0" prefWidth="603.0" promptText="Chercher produit" />
+                  <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#btnRefreshOnAction" prefHeight="32.0" prefWidth="32.0" />
+                  <AnchorPane prefHeight="64.0" prefWidth="480.0">
+                     <children>
+                        <ChoiceBox fx:id="cbCategorie" layoutX="287.0" layoutY="17.0" prefWidth="150.0" />
+                        <Label layoutX="100.0" layoutY="22.0" text="Choisir par catégorie :">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </top>
+         <bottom>
+            <HBox alignment="CENTER_RIGHT" prefHeight="69.0" prefWidth="552.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnDetail" mnemonicParsing="false" onAction="#btnDetailOnAction" text="Voir Détail" />
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </bottom>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="30.0" right="30.0" />
+         </padding>
+      </BorderPane>
+   </children>
+</AnchorPane>
